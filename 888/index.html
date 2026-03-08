@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Special Card</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<!-- BACKGROUND PARTICLE -->
+
+<canvas id="particleCanvas"></canvas>
+
+<!-- SCENE 1 -->
+
+<section class="scene active" id="scene1">
+
+<div class="envelope">
+
+<div class="flap"></div>
+
+<div class="letter">
+
+<div class="avatar" id="avatar"></div>
+
+<p class="startText">
+tap avatar để bắt đầu
+</p>
+
+</div>
+
+</div>
+
+<img src="images/anhnho1.jpg" class="corner c1">
+<img src="images/anhnho2.jpg" class="corner c2">
+<img src="images/anhnho3.jpg" class="corner c3">
+<img src="images/anhnho4.jpg" class="corner c4">
+
+</section>
+
+<!-- SCENE 2 -->
+
+<section class="scene" id="scene2">
+
+<div class="page">
+
+<h2 class="title">Trang 2</h2>
+
+<p class="text">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+</p>
+
+<div class="giftRow">
+
+<div class="gift small" id="giftA"></div>
+
+<div class="gift small" id="giftB"></div>
+
+</div>
+
+<img src="images/anhnho5.jpg" class="hidden reveal" id="img5">
+<img src="images/anhnho6.jpg" class="hidden reveal" id="img6">
+
+</div>
+
+</section>
+
+<!-- SCENE 3 -->
+
+<section class="scene" id="scene3">
+
+<div class="page">
+
+<h2 class="title">Trang 3</h2>
+
+<p class="text">
+Lorem ipsum dolor sit amet.
+</p>
+
+<img src="images/anhnho7.jpg" class="photo">
+
+</div>
+
+</section>
+
+<!-- SCENE 4 -->
+
+<section class="scene" id="scene4">
+
+<div class="page">
+
+<h2 class="title">Trang 4</h2>
+
+<p class="text">
+Lorem ipsum dolor sit amet.
+</p>
+
+<img src="images/anhnho8.jpg" class="photo">
+
+</div>
+
+</section>
+
+<!-- SCENE 5 (GIFT PAGE) -->
+
+<section class="scene" id="scene5">
+
+<div class="page giftScene">
+
+<h2 class="title">
+Mở quà
+</h2>
+
+<div class="giftGrid">
+
+<div class="gift big" data-img="images/anhnho9.jpg"></div>
+
+<div class="gift big" data-img="images/anhnho10.jpg"></div>
+
+<div class="gift big" data-img="images/anhnho11.jpg"></div>
+
+</div>
+
+<div class="egg" id="egg">
+?
+</div>
+
+<button class="nextBtn" id="nextBtn">
+Next
+</button>
+
+</div>
+
+</section>
+
+<!-- SCENE 6 -->
+
+<section class="scene split" id="scene6">
+
+<div class="splitLeft">
+
+<p class="text">
+Lorem ipsum dolor sit amet consectetur adipiscing elit.
+</p>
+
+</div>
+
+<div class="splitRight">
+
+<img src="images/anhnho12.jpg" class="photo">
+
+</div>
+
+</section>
+
+<!-- SCENE 7 -->
+
+<section class="scene split" id="scene7">
+
+<div class="splitLeft">
+
+<img src="images/anhnho12.jpg" class="photo">
+
+</div>
+
+<div class="splitRight">
+
+<p class="text">
+Lorem ipsum dolor sit amet consectetur adipiscing elit.
+</p>
+
+</div>
+
+</section>
+
+<!-- CREDIT -->
+
+<section class="scene" id="scene8">
+
+<div class="creditRoll">
+
+<h2>Thank You</h2>
+
+<p>For watching this card</p>
+
+<p>Made with ❤️</p>
+
+<p>...</p>
+
+</div>
+
+</section>
+
+<!-- POPUP IMAGE -->
+
+<div id="popupContainer"></div>
+
+<!-- SCRIPT -->
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

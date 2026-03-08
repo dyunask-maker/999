@@ -1,0 +1,389 @@
+/* RESET */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;
+background:#ffffff;
+overflow:hidden;
+height:100vh;
+}
+
+/* PARTICLE CANVAS */
+
+#particleCanvas{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-1;
+}
+
+/* SCENE SYSTEM */
+
+.scene{
+position:absolute;
+width:100%;
+height:100vh;
+display:none;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+padding:30px;
+}
+
+.scene.active{
+display:flex;
+animation:fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn{
+
+0%{
+opacity:0;
+transform:translateY(20px);
+}
+
+100%{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+/* PAGE LAYOUT */
+
+.page{
+max-width:800px;
+text-align:center;
+}
+
+.title{
+font-size:32px;
+margin-bottom:20px;
+font-weight:600;
+}
+
+.text{
+font-size:18px;
+line-height:1.6;
+margin-bottom:20px;
+}
+
+/* CORNER PHOTOS */
+
+.corner{
+position:absolute;
+width:90px;
+border-radius:10px;
+box-shadow:0 5px 20px rgba(0,0,0,0.2);
+}
+
+.c1{
+top:20px;
+left:20px;
+}
+
+.c2{
+top:20px;
+right:20px;
+}
+
+.c3{
+bottom:20px;
+left:20px;
+}
+
+.c4{
+bottom:20px;
+right:20px;
+}
+
+/* ENVELOPE */
+
+.envelope{
+position:relative;
+width:280px;
+height:180px;
+background:#f3c2d3;
+border-radius:8px;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.flap{
+position:absolute;
+top:-90px;
+width:0;
+height:0;
+border-left:140px solid transparent;
+border-right:140px solid transparent;
+border-bottom:90px solid #e8a9bf;
+transform-origin:bottom;
+transition:0.8s;
+}
+
+.envelope.open .flap{
+transform:rotateX(180deg);
+}
+
+/* LETTER */
+
+.letter{
+position:absolute;
+width:240px;
+height:140px;
+background:white;
+border-radius:8px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+transition:0.6s;
+}
+
+.envelope.open .letter{
+transform:translateY(-40px);
+}
+
+/* AVATAR */
+
+.avatar{
+width:110px;
+height:110px;
+border-radius:50%;
+background:#ff8fb1;
+cursor:pointer;
+margin-bottom:10px;
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+
+0%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.08);
+}
+
+100%{
+transform:scale(1);
+}
+
+}
+
+/* START TEXT */
+
+.startText{
+font-size:14px;
+opacity:0.7;
+}
+
+/* PHOTOS */
+
+.photo{
+width:260px;
+border-radius:12px;
+margin-top:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* SPLIT LAYOUT */
+
+.split{
+flex-direction:row;
+gap:40px;
+}
+
+.splitLeft,
+.splitRight{
+flex:1;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+}
+
+/* GIFT */
+
+.gift{
+width:100px;
+height:100px;
+background:#ff6b6b;
+border-radius:12px;
+margin:15px;
+cursor:pointer;
+position:relative;
+}
+
+.gift.small{
+width:80px;
+height:80px;
+}
+
+.gift.big{
+width:120px;
+height:120px;
+background:#ffa94d;
+}
+
+.gift::before{
+content:"";
+position:absolute;
+width:100%;
+height:12px;
+background:#fff;
+top:40px;
+}
+
+.gift::after{
+content:"";
+position:absolute;
+height:100%;
+width:12px;
+background:#fff;
+left:44px;
+}
+
+/* GIFT GRID */
+
+.giftGrid{
+display:flex;
+gap:30px;
+flex-wrap:wrap;
+justify-content:center;
+margin-top:30px;
+}
+
+.giftRow{
+display:flex;
+justify-content:center;
+gap:30px;
+margin-top:20px;
+}
+
+/* GIFT ANIMATION */
+
+.shake{
+animation:shake 0.3s;
+}
+
+@keyframes shake{
+
+0%{transform:rotate(0)}
+25%{transform:rotate(5deg)}
+50%{transform:rotate(-5deg)}
+75%{transform:rotate(5deg)}
+100%{transform:rotate(0)}
+
+}
+
+.inflate{
+transform:scale(1.25);
+transition:0.2s;
+}
+
+/* EASTER EGG */
+
+.egg{
+margin-top:30px;
+font-size:26px;
+cursor:pointer;
+opacity:0.6;
+}
+
+/* BUTTON */
+
+.nextBtn{
+margin-top:30px;
+padding:10px 30px;
+border:none;
+background:#ff6b6b;
+color:white;
+border-radius:20px;
+font-size:16px;
+cursor:pointer;
+}
+
+/* POPUP PHOTO */
+
+.popupPhoto{
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+width:320px;
+border-radius:14px;
+z-index:20;
+box-shadow:0 15px 40px rgba(0,0,0,0.4);
+animation:pop 0.4s ease;
+}
+
+@keyframes pop{
+
+0%{
+transform:translate(-50%,-50%) scale(0.3);
+opacity:0;
+}
+
+100%{
+transform:translate(-50%,-50%) scale(1);
+opacity:1;
+}
+
+}
+
+/* CONFETTI */
+
+.confetti{
+position:fixed;
+width:8px;
+height:8px;
+background:red;
+top:-10px;
+animation:fall linear forwards;
+}
+
+@keyframes fall{
+
+to{
+transform:translateY(110vh) rotate(360deg);
+}
+
+}
+
+/* CREDIT */
+
+.creditRoll{
+position:absolute;
+bottom:-100%;
+text-align:center;
+animation:roll 18s linear forwards;
+font-size:20px;
+}
+
+@keyframes roll{
+
+0%{
+bottom:-100%;
+}
+
+100%{
+bottom:120%;
+}
+
+}
+
+/* HIDDEN */
+
+.hidden{
+display:none;
+}
